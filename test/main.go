@@ -11,9 +11,9 @@ func main() {
 	logger := logger2.NewLogger()
 	logger.Hook = func(level logger2.Level, msg string) {
 		fmt.Println(level.String())
-		fmt.Println(msg)
+		fmt.Println("call back" + msg)
 	}
 
-	logger.WithField("it sent out data to s3", "completed").Info("dsagads")
+	logger.WithField("logging from our S3 bucket", "completed").Info("done")
 
 }
